@@ -1,0 +1,181 @@
+
+body {
+	margin: 0px;
+}
+
+header {
+	background-color: yellow;
+	font-family: Arial;
+	padding: 0px;
+	margin: 0px;
+}
+header h1 {
+	margin: 0px;
+	padding: 10px;
+	font-size: 250%;
+	text-align: middle;
+}
+
+.menu_hor {
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: green;
+}
+.menu_hor li {
+  float: left;
+  border-right: 1px solid yellow;
+}
+.menu_hor li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+.menu_hor li:last-child {
+  border-right: none;
+}
+
+section { 
+	width: 73%; 
+	float: left;
+	margin-left: 10px;	
+}
+aside {
+	width: 20%;
+	float: left;
+	margin-top: 4px;
+}
+aside img {
+	margin: 10px 0px 5px 55px;
+}
+
+article {
+	clear: both;
+	/*border: dashed gray 1px;*/
+	
+}
+article img{
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 15px 10px 10px 10px;
+}
+
+article p{
+	padding-top: 5px;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 1px;
+}
+
+.wrapper >*{
+    grid-column: col-start / span 12;}
+
+
+@media (max-width: 480px){
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.content{
+	grid-column: col-start / span 12;
+	order: 2;
+}
+
+.side{
+	grid-column: col-start  / span 12;
+	order: 1;
+	position: relative;
+	left: 20%;
+
+}
+
+.side img{
+	margin-left: 0px;
+
+}
+
+nav ul{
+	display: flex;
+	flex-direction: row;
+}
+article{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	left: 20%;
+	/*border: dashed gray 1px;*/
+}
+article img{
+	position: relative;
+	left: 25%;
+}
+article h3{
+	text-align: center;
+	/*border: dashed gray 1px;*/
+}
+
+	footer {
+	clear: both;
+	background-color: yellow;
+	margin: 0px;
+	margin-top: 8px;
+	padding: 5px;
+	border-top: 2px solid black;
+	font-family: Arial;
+	flex-direction: column;
+	text-align: center;
+	position: static;
+ }
+}
+@media (max-width: 800px) and (min-width: 481px){
+
+  .content {
+    grid-column: col-start / span 7;
+  }
+  .side {
+    grid-column: col-start 8 / span 5;
+  }
+
+  footer {
+	clear: both;
+	background-color: yellow;
+	margin: 0px;
+	margin-top: 8px;
+	padding: 5px;
+	border-top: 2px solid black;
+	font-family: Arial;
+	text-align: center;
+	}
+}
+
+@media (min-width: 801px){
+
+  .content {
+    grid-column: col-start / span 8;
+  }
+  .side {
+    grid-column: col-start 9 / span 4;
+  }
+    nav ul {
+    flex-direction: row;
+  }
+
+  footer {
+	clear: both;
+	background-color: yellow;
+	margin: 0px;
+	margin-top: 8px;
+	padding: 5px;
+	border-top: 2px solid black;
+	font-family: Arial;
+	text-align: left;
+	}
+}
